@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+ProfileGenerator/obj/*
+ProfileGenerator/bin/*
+ProfileGenerator/.vs/*
