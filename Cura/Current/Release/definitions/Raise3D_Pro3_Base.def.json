@@ -7,6 +7,7 @@
 		"manufacturer": "Raise3D",
 		"visible": false,
 		"file_formats": "application/gzip;text/x-gcode",
+        "platform": "raise3d_pro3_platform.obj",
 		"platform_texture": "Raise3DPro3PlusBackplate.png",
 		"first_start_actions": ["MachineSettingsAction"],
 		"platform_offset": [0, 0, 0],
