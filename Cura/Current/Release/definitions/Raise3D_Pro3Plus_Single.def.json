@@ -4,7 +4,10 @@
 	"inherits": "Raise3D_Pro3_Base",
 	"overrides": {
 		"machine_name": { "default_value": "Raise3D Pro3 Plus Single"},
-		"machine_extruder_count": { "default_value": 1 },
+		"machine_extruder_count": { "default_value": 1 },		
+		"machine_width": {"default_value": 306},
+		"machine_depth": {"default_value": 306},
+		"machine_height": { "default_value": 605 },
 		"machine_start_gcode": {
 			"default_value": "M572 D0 S0.03\r\nM572 D1 S0.03\r\nG21\r\nG90\r\nM82\r\nM107\r\nG28 \r\nG1 Z0 F500\r\nG92 E0\r\nG1 Z0.2 F400\r\nG1 X60 Y-2 F800\r\nG1 X140 Y-2 E12 F200\r\nG1 Z5 E15 F200\r\nG92 E0\r\nG1 F9000.00\r\nM117 Printing..."
 		},
@@ -15,6 +18,7 @@
 	"metadata": {
 		"quality_definition": "Raise3D_Pro3_Base",
 		"visible": true,
+		"platform_offset": [0, 0, 0],
 		"machine_extruder_trains": {
 			"0": "Raise3D_Pro3_Base_extruder_left"
 		}
