@@ -1,0 +1,48 @@
+;;; Raise3D Pro3 Single Start Gcode
+; prehead code start
+M221 T0 S90.00                              ; Set extrude factor override percentage
+; M221 T1 S90.00                            ; Set extrude factor override percentage
+M140 S{material_bed_temperature_layer_0}    ; Set Bed Temperature (Fast)
+M104 T0 S{material_print_temperature}       ; Set Extruder Temperature (left)
+; M104 T1 S{material_print_temperature}     ; Set Extruder Temperature (right)
+M109 T0 S{material_print_temperature}       ; Set Extruder Temperature and Wait (left)
+; M109 T1 S{material_print_temperature}     ; Set Extruder Temperature and Wait (right)
+T0                                          ; Select Extruder T0 (left)
+M190 S{material_bed_temperature_layer_0}    ; Wait for bed temperature to reach target temp
+; prehead code end
+;;;
+M572 D0 S0.03                               ; Set extruder pressure advance
+M572 D1 S0.03                               ; Set extruder pressure advance
+G21                                         ; Set Units to Millimeters
+G90                                         ; Set to Absolute Positioning
+M82                                         ; Set extruder to absolute mode
+M107                                        ; Fan Off
+G28                                         ; Move to Origin (Home)
+G1 Z15.0 F{speed_travel}                    ; Move to first line position
+;;;
+; draw first line with extruder T0 (left)
+T0                                          ; Select Extruder T0 (left)
+G92 E0
+G1 X30 Y-2 F800
+G1 Z0.35 F200
+G1 X140 Y-2 E13 F200
+G1 E15 F200
+G1 Z5 F200
+G92 E0
+; G0 E-{switch_extruder_retraction_amount} F200
+;;;
+;;; draw first line with extruder T1 (right)
+; T1                                        ; Select Extruder T1 (right)
+; G92 E0
+; G1 X210 Y-2 F800
+; G1 Z0.35 F200
+; G1 X275 Y-2 E13 F200
+; G1 E15 F200
+; G1 Z5 F200
+; G92 E0
+; G0 E-{switch_extruder_retraction_amount} F200
+;;;
+; T0                                        ; Select Extruder T0 (left)
+G1 F{speed_travel}
+M117 Printing…                              ; Display Message
+M1001                                       ; End of start G-code

@@ -1,0 +1,28 @@
+;;; Raise3D Pro3 Double End Gcode
+; do some defaults
+M204 P1000.00                       ; Set default acceleration
+M106 S0                             ; Fan off
+G91                                 ; Set to Relative Positioning
+G0 F300 Z+5.0                       ; Move 5mm down
+G90                                  ; Set to Absolute Positioning
+G0 F9000 X150.0 Y150.0              ; Move to
+;;;
+M221 T0 S100                        ; Set extrude factor override percentage
+M221 T1 S100                        ; Set extrude factor override percentage
+G92 E0                              ; Set Position Extruder 0
+;;;
+M1002                               ; Start of start G-code
+;  End Gcode
+M221 T0 S100                        ; Set extrude (E0) factor override percentage (100%)
+M221 T1 S100                        ; Set extrude (E1) factor override percentage (100%)
+M104 T0 S0                          ; Set Extruder T (E0) Temperature to (S) 0°C
+M104 T1 S0                          ; Set Extruder T (E1) Temperature to (S) 0°C
+M140 S0                             ; Set Bed Temperature (Fast) to (S) 0°C
+M106 P2 S0                          ; Set Fan (P2) to (S) off
+M107                                ; Fan Off
+G91                                 ; Set to Relative Positioning
+G1 E-1 F300                         ; Move Extruder -1
+G1 Z+0.5 E-5 Y-20 F{speed_travel}   ; Move
+G28 X0 Y0                           ; Move to Origin (Home - X and Y)
+M84                                 ; Stop idle hold
+G90                                 ; Set to Absolute Positioning
