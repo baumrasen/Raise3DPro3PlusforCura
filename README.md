@@ -10,7 +10,14 @@ This Github is an ongoing effort to create a good printer profile for the Raise3
 It is my hope that other people will try out and help tune the profile untill the quality is as good as can be expected from the printer.
 
 # Current status
-Current (v0.3)
+
+## Develop
+* try to reset to some default from IdeaMaker-settings
+* added 3D platform model
+* testing with material ABS has to be done
+
+
+## V0.3
 * **First release!  [installer can be found here](https://github.com/thijse/Raise3DPro3PlusforCura/releases/tag/Pre-release)**
 * Solved issue in end G-code that resulted in full unloading of material
 * Created single (left) nozzle & dual nozzle variants, which different start & stop G-code. The the dual nozzle prepares and heats both nozzles before print
@@ -23,7 +30,7 @@ Current (v0.3)
 More images can be found in [/Cura/Current/Results/](/Cura/Current/Results/)).
 
 
-V0.2
+## V0.2
 * added quality variants, nozzle variants & materials based on Creality materials
 * Integrated Ultimaker S5 settings in printer definitions. This strongly improved the print quality. The benchys first layer was significantly better, the hull was much smoother, no adhesion issues. 
 * Added Raise3D base plate
@@ -32,7 +39,7 @@ V0.2
 ![Benchy hull line](/Cura/Archive/v2/Results/IMG_1433.JPG)
 more images can be found in [/Cura/Archive/v2/Results/](/Cura/Archive/v2/Results/).
 
-V0.1
+## V0.1
 * The first basic profile created based on IdeaMaker settings and Pro2 community profiles. Start & Stop G-code was extracted from Ideamaker (4.2.3). The first 2 benchies failed due to insufficient build plate adhesion. 
 
 
